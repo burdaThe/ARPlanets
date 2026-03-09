@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 using UnityEngine.XR.ARFoundation;
@@ -12,29 +13,56 @@ public class ImageTracker : MonoBehaviour
 
     List<GameObject> ARObjects = new List<GameObject>();
 
+    public TMP_Text infoBox;
 
     void Awake()
     {
         _trackedImages = GetComponent<ARTrackedImageManager>();
     }
 
+    private void Update()
+    {
+        OutputTracking();
+    }
+
+    private void OutputTracking()
+    {
+        int i = 0;
+        foreach (var trackedImage in _trackedImages.trackables)
+        {
+            if (trackedImage.trackingState == TrackingState.Limited)
+            {
+                ARObjects[i].SetActive(false);
+            }
+            if (trackedImage.trackingState == TrackingState.Tracking)
+            {
+                ARObjects[i].SetActive(true);
+            }
+            i++;
+        }
+
+        infoBox.text = "Tracking Data: \n";
+        
+        foreach (var trackedImage in _trackedImages.trackables)
+        {
+            infoBox.text += "Image: " + trackedImage.referenceImage.name + " " + trackedImage.trackingState + "\n";
+        }
+
+    }
+
     void OnEnable()
     {
-        // Для UnityEvent используем AddListener
         _trackedImages.trackablesChanged.AddListener(OnTrackablesChanged);
     }
 
     void OnDisable()
     {
-        // Для UnityEvent используем RemoveListener
         _trackedImages.trackablesChanged.RemoveListener(OnTrackablesChanged);
     }
 
-
-    // Event Handler
     private void OnTrackablesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
-        //Create object based on image tracked
+        // создать объект
         foreach (var _trackedImage in eventArgs.added)
         {
             foreach (var arPrefab in ArPrefabs)
@@ -47,7 +75,7 @@ public class ImageTracker : MonoBehaviour
             }
         }
 
-        //Update tracking position
+        // апдейт поза объекта
         foreach (var _trackedImage in eventArgs.updated)
         {
             foreach (var gameObject in ARObjects)

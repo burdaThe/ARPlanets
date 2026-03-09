@@ -329,13 +329,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747090549128830818}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.53, y: 0.1, z: 0.717}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.53, y: 0.62, z: 1.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4365528357719543085}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &2994232021940910230
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Simulation::UnityEngine.XR.Simulation.SimulatedTrackedImage
   m_Image: {fileID: 2800000, guid: dc866f90a3552bb41b7e05f839929461, type: 3}
-  m_ImagePhysicalSizeMeters: {x: 1, y: 1}
+  m_ImagePhysicalSizeMeters: {x: 0.3, y: 0.3}
   m_QuadMesh: {fileID: 0}
   m_QuadMaterial: {fileID: 0}
   m_QuadMeshFilter: {fileID: 2994232021940910230}
@@ -630,13 +630,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7859021643188533481}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.68, y: 0.1, z: 0.74}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.68, y: 0.62, z: 1.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4365528357719543085}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5702523302453339362
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39bb24e2bd7a482ca08117fb44b8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.XR.Simulation::UnityEngine.XR.Simulation.SimulatedTrackedImage
-  m_Image: {fileID: 2800000, guid: 1a20450c717769a4886df3b5baf2d3fb, type: 3}
+  m_Image: {fileID: 2800000, guid: 9ebebd6c018031847b25359ff3e38592, type: 3}
   m_ImagePhysicalSizeMeters: {x: 1, y: 1}
   m_QuadMesh: {fileID: 0}
   m_QuadMaterial: {fileID: 0}
